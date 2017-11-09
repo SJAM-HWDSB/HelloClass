@@ -1,0 +1,37 @@
+// Unit 5 Lesson 5 Clicker Game
+// Tahseen Ahmed
+// Wednesday, November 8th, 2017 - 11:34 PM
+// This is the code for my generic clicker game. Take it and edit it how you like, and even use it for your own code.org work.
+
+var score = 0;
+var lives = 5;
+onEvent("start_button", "click", function() {
+  setScreen("game_screen");
+});
+onEvent("apple", "click", function() {
+  score = score + 1;
+  setPosition("apple", randomNumber(50,280), randomNumber(50, 350));
+  setText("total_score", score);
+  if (score == 15) {
+    setScreen("win_screen");
+  }
+});
+onEvent("background", "click", function() {
+  lives = lives - 1;
+  setText("number_lives", lives);
+  if (lives == 0) {
+    setScreen("lose_screen");
+    score = 0;
+    lives = 5;
+  }
+});
+onEvent("playAgain_button", "click", function() {
+  setText("total_score", score);
+  setText("number_lives", lives);
+  setScreen("welcome_screen");
+});
+onEvent("tryAgain_button", "click", function() {
+  setText("total_score", score);
+  setText("number_lives", lives);
+  setScreen("welcome_screen");
+});
