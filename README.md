@@ -2,3 +2,5 @@
 Welcome to SJAM ICS4U!
 
 Drake's reaction: I'm happy to be here.
+
+I love Git HUb
